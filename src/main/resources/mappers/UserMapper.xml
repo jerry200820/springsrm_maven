@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.UserMapper">
+    <!--查询所有数据-->
+    <select id="getAll" resultType="User">
+        select * from user
+    </select>
+
+    <select id="selectById" resultType="User">
+        select * from user where id = #{id}
+    </select>
+
+    <select id="deleteId" resultType="User">
+        delete from user where id = #{id}
+    </select>
+
+    <insert id="intersID" >
+        insert  into user (name,age,sex)
+ value
+          (  #{name},
+
+            #{age},
+
+            #{sex})
+
+
+    </insert>
+
+    <update id="Updateid"   >
+
+update user set name ="漳卅"  where id= 1
+    </update>
+
+
+    <update id="updateName">
+        update user set name = #{name} where age = #{age}
+
+
+    </update>
+
+</mapper>
